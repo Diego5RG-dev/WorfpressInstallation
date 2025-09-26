@@ -114,4 +114,32 @@ Reiniciaremos el servicio con
 
 **sudo service mysql start**
 
+# Conectaremos el Wordpress a la base de datos 
 
+Estos pasos pueden ser un poco confusos 
+sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
+
+Despues lo que haremos sera esto
+
+sudo -u www-data sed -i 's/database_name_here/wordpress/' /srv/www/wordpress/wp-config.php
+sudo -u www-data sed -i 's/username_here/wordpress/' /srv/www/wordpress/wp-config.php
+sudo -u www-data sed -i 's/password_here/<your-password>/' /srv/www/wordpress/wp-config.php
+
+aqui es importante que solo modifiquemos el apartado <your_password> xon nuestra contraseña 
+
+sudo -u www-data nano /srv/www/wordpress/wp-config.php
+
+En el siguiente archivo de configuracion lo necesario es encontrar los siguientes apartados
+define( 'AUTH_KEY',         'put your unique phrase here' );
+define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
+define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
+define( 'NONCE_KEY',        'put your unique phrase here' );
+define( 'AUTH_SALT',        'put your unique phrase here' );
+define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
+define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
+define( 'NONCE_SALT',       'put your unique phrase here' );
+
+Y las cambiaremos por unas claves aleatorias las cuales aparecen en el siguiente enlace
+https://api.wordpress.org/secret-key/1.1/salt/
+
+y con esto ya si ponemos en cualquier navegador nuestra direccion IP y si todo ha salido bien nos aparecera el 
