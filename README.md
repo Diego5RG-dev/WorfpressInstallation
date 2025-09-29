@@ -123,6 +123,8 @@ Reiniciaremos el servicio con:
 
     sudo service mysql start
 
+![alt text](https://github.com/Diego5RG-dev/WorfpressInstallation/blob/main/imagenes/database.png)
+
 # 6. Conectaremos WordPress a la base de datos
 
 Estos pasos pueden ser un poco confusos.
