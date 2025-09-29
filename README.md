@@ -9,15 +9,23 @@ Requisitos
 
     Conocimientos básicos de línea de comandos.
 
+    Maquina virtual especificaciones:
+
+    Ubuntu server 24.04.3
+
+    Memoria RAM: 8gb
+
+    Disco duro: 60gb
+
 # 1. 🛠️ Instalar Dependencias
 
 Antes de instalar WordPress, es necesario instalar el servidor web Apache2, el servidor de bases de datos MySQL y los módulos necesarios de PHP.
 
 Ejecuta el siguiente comando para actualizar la lista de paquetes e instalar todas las dependencias requeridas:
-Bash
 
-sudo apt update
-sudo apt install apache2 \
+
+    sudo apt update
+    sudo apt install apache2 \
     ghostscript \
     libapache2-mod-php \
     mysql-server \
@@ -36,8 +44,7 @@ sudo apt install apache2 \
 
 Se recomienda usar la versión oficial de WordPress.org en lugar del paquete del archivo de Ubuntu.
 
-    Crea el directorio de instalación y establece permisos:
-    Bash
+Crea el directorio de instalación y establece permisos:
 
 sudo mkdir -p /srv/www
 sudo chown www-data: /srv/www
