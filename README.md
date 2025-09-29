@@ -17,7 +17,7 @@ Requisitos
 
     Disco duro: 60gb
 
-# 1. 🛠️ Instalar Dependencias
+# 1. Instalar Dependencias
 
 Antes de instalar WordPress, es necesario instalar el servidor web Apache2, el servidor de bases de datos MySQL y los módulos necesarios de PHP.
 
@@ -46,16 +46,15 @@ Se recomienda usar la versión oficial de WordPress.org en lugar del paquete del
 
 Crea el directorio de instalación y establece permisos:
 
-sudo mkdir -p /srv/www
-sudo chown www-data: /srv/www
+    sudo mkdir -p /srv/www
+    sudo chown www-data: /srv/www
 
 Descarga y descomprime WordPress:
 Descarga el archivo y extráelo directamente en el directorio /srv/www/ usando el usuario www-data.
-Bash
 
     curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www
 
-# 3. ⚙️ Configurar Apache para WordPress
+# 3. Configurar Apache para WordPress
 
 Debes crear un archivo de configuración de sitio virtual para indicarle a Apache cómo servir WordPress.
 
@@ -77,78 +76,80 @@ Debes crear un archivo de configuración de sitio virtual para indicarle a Apach
 
     ![alt text](https://github.com/Diego5RG-dev/WorfpressInstallation/blob/main/imagenes/primeraConf.png)
 
-# Habilitar sitios de wordpress
+# 4. Habilitar sitios de wordpress
 
 Ahora lo que tenemos que haces es habilitar los sitios de worpress con los siguientes comandos
 
 **Habilita el nuevo sitio de WordPress**
 
-sudo a2ensite wordpress
+    sudo a2ensite wordpress
 
 **Habilita la reescritura de URL (para permalinks)**
 
-sudo a2enmod rewrite
+    sudo a2enmod rewrite
 
 **Deshabilita el sitio predeterminado "It Works"**
 
-sudo a2dissite 000-default
+    sudo a2dissite 000-default
 
 **Reinicia el servicio de apache**
 
-sudo service apache2 reload
+    sudo service apache2 reload
 
-# Creacion de base de datos
+# 5. Creacion de base de datos
 
 para crear la base de datos tendremos que ir siguiendo los siguientes comandos, con cuidado porque alguno puede no copiarse bien 
 
-**sudo mysql -u root**
+    sudo mysql -u root
 
 despues de hacer eso nos pasara a la pantalla como "usuarios" sql 
 
-**CREATE DATABASE wordpress;**
-**CREATE USER wordpress@localhost IDENTIFIED BY '<your-password>';**
+    CREATE DATABASE wordpress
+    CREATE USER wordpress@localhost IDENTIFIED BY '<your-password>';
 
-**GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER**
+    GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER
     -> ON wordpress.*
     -> TO wordpress@localhost;**
+    
 Como recomendacion personal este comando solo copiar la parte superior y escrubur a mano el on y el to para maypr comodidad porque en mi caso lo copiaba mal
 
-**FLUSH PRIVILEGES;**
+    FLUSH PRIVILEGES;
 
 Y finalmente saldremos con un 
 
-**quit**
+    quit
 
 Reiniciaremos el servicio con 
 
-**sudo service mysql start**
+    sudo service mysql start
 
-# Conectaremos el Wordpress a la base de datos 
+# 6. Conectaremos el Wordpress a la base de datos 
 
 Estos pasos pueden ser un poco confusos 
-sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
+
+    sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
 
 Despues lo que haremos sera esto
 
-sudo -u www-data sed -i 's/database_name_here/wordpress/' /srv/www/wordpress/wp-config.php
-sudo -u www-data sed -i 's/username_here/wordpress/' /srv/www/wordpress/wp-config.php
-sudo -u www-data sed -i 's/password_here/<your-password>/' /srv/www/wordpress/wp-config.php
+    sudo -u www-data sed -i 's/database_name_here/wordpress/' /srv/www/wordpress/wp-config.php
+    sudo -u www-data sed -i 's/username_here/wordpress/' /srv/www/wordpress/wp-config.php
+    sudo -u www-data sed -i 's/password_here/<your-password>/' /srv/www/wordpress/wp-config.php
 
 aqui es importante que solo modifiquemos el apartado <your_password> xon nuestra contraseña 
 
-sudo -u www-data nano /srv/www/wordpress/wp-config.php
+    sudo -u www-data nano /srv/www/wordpress/wp-config.php
 
 En el siguiente archivo de configuracion lo necesario es encontrar los siguientes apartados
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+    define( 'AUTH_KEY',         'put your unique phrase here' );
+    define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
+    define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
+    define( 'NONCE_KEY',        'put your unique phrase here' );
+    define( 'AUTH_SALT',        'put your unique phrase here' );
+    define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
+    define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
+    define( 'NONCE_SALT',       'put your unique phrase here' );
 
 Y las cambiaremos por unas claves aleatorias las cuales aparecen en el siguiente enlace
 https://api.wordpress.org/secret-key/1.1/salt/
 
-y con esto ya si ponemos en cualquier navegador nuestra direccion IP y si todo ha salido bien nos aparecera el 
+# 7.Wordpress
