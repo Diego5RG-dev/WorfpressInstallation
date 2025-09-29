@@ -153,7 +153,7 @@ En el siguiente archivo de configuración, lo necesario es encontrar los siguien
 Y las cambiaremos por unas claves aleatorias, las cuales aparecen en el siguiente enlace:
 https://api.wordpress.org/secret-key/1.1/salt/
 
-imagen
+![alt text](https://github.com/Diego5RG-dev/WorfpressInstallation/blob/main/imagenes/configuraciones.png)
 
 # 7. WordPress
 
@@ -161,7 +161,7 @@ Pasos iniciales de WordPress
 
 Ya dentro de WordPress, lo primero que hice, como pedía la tarea, fue escoger un tema. Una vez lo escogí, basándome en que ya lo había utilizado anteriormente, elegí Hestia, el cual nos permite bastante configuración y modificación de los diversos elementos de las páginas web y, a mí personalmente, me gusta mucho.
 
-imagen
+![alt text](https://github.com/Diego5RG-dev/WorfpressInstallation/blob/main/imagenes/temaWordpress.png)
 
 En el apartado de los plugins, cogí un par que no he usado mucho, pero me parecieron bastante interesantes, empezando por:
 
@@ -172,3 +172,5 @@ En el apartado de los plugins, cogí un par que no he usado mucho, pero me parec
 **MC4WP: Mailchimp for WordPress:** este plugin no lo he utilizado nunca, pero he visto comentarios buenos de él y está en la sección de "populares" de WordPress. Básicamente, es un gestor de suscripciones y boletines para nuestra página.
 
 **Akismet Anti-spam: Spam Protection:** Luego, Akismet lo trae por defecto WordPress y es un protector contra el spam en nuestro blog o plataforma.
+
+![alt text](https://github.com/Diego5RG-dev/WorfpressInstallation/blob/main/imagenes/plugins.png)
