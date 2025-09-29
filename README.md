@@ -75,7 +75,7 @@ Debes crear un archivo de configuración de sitio virtual para indicarle a Apach
     </Directory>
     </VirtualHost>
 
-    ![alt text](imagenes/primeraConf.png)
+    ![alt text](https://github.com/Diego5RG-dev/WorfpressInstallation/blob/main/imagenes/primeraConf.png)
 
 # Habilitar sitios de wordpress
 
