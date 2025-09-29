@@ -152,4 +152,27 @@ En el siguiente archivo de configuracion lo necesario es encontrar los siguiente
 Y las cambiaremos por unas claves aleatorias las cuales aparecen en el siguiente enlace
 https://api.wordpress.org/secret-key/1.1/salt/
 
+imagen
+
 # 7.Wordpress
+
+pasos iniciales de wordpress
+
+Ya dentro de wordpress lo primero que hice como dijo la tarea fue el escoger un tema, una vez lo escogi, basandome en que ya lo habia
+utilizado anteriormente, Hestia, el cual nos permite bastante configuracion y modificacion de los diversos elementos de las paginas web, y a mi personalmente 
+me gusta mucho
+
+imagen
+
+En el apartado de los plugins cogi un par que no he usado mucho pero me parecieron bastante interesantes empezando por 
+
+**All-in-One WP Migration and Backup** el cual es un plugin el cual nos permite el hecho de poder migrar nuestro wordpress y paginas de manera relativamente sencilla
+mediante copias de seguridad y simplemente, recuperarlas en otro dispositivo 
+
+**Essential Addons for Elementor** Este nos añade opciones de diseño y de cosas parecidas , simplemente insertandolas, asi que esta bastante bien 
+
+**MC4WP: Mailchimp for WordPress** este plugin no lo he utilizado nunca pero he visto comentarios buenos de el y esta en la seccion de "populares" de wordpress, basicamentes
+es un gestor de suscripciones y boletines a nuestra pagina 
+
+**Akismet Anti-spam: Spam Protection** Luego el Akismet te lo trae por defecto el wordpress y es un protector contra el spam en nuestro blog o platadorma
+
