@@ -62,7 +62,7 @@ Debes crear un archivo de configuración de sitio virtual para indicarle a Apach
     Crea el archivo de configuración en /etc/apache2/sites-available/wordpress.conf con la siguiente información:
     Apache la estructura de directorios ya estara creada solo mediante 
 
-<VirtualHost *:80>
+    <VirtualHost *:80>
     DocumentRoot /srv/www/wordpress
     <Directory /srv/www/wordpress>
         Options FollowSymLinks
@@ -73,7 +73,9 @@ Debes crear un archivo de configuración de sitio virtual para indicarle a Apach
         Options FollowSymLinks
         Require all granted
     </Directory>
-</VirtualHost>
+    </VirtualHost>
+
+    ![alt text](imagenes/primeraConf.png)
 
 # Habilitar sitios de wordpress
 
